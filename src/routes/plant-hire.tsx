@@ -1,3 +1,4 @@
+import { photos } from "@/config/photos";
 import { createFileRoute } from "@tanstack/react-router";
 import { site } from "@/config/site";
 import { pageHead, waLink } from "@/lib/site-utils";
@@ -23,8 +24,8 @@ function PlantHire() {
       </PageHero>
       <Section className="pt-0">
         <div className="grid gap-3 md:grid-cols-2">
-          <ImageSlot label="Hino 700 · side" ratio="4/3" />
-          <ImageSlot label="Hino 700 · rear" ratio="4/3" />
+          <ImageSlot label="Hino 700 tipper truck, side view" ratio="4/3" photo={photos.hinoSide} eager />
+          <ImageSlot label="Hino 700 front, Sand, Stone &amp; Plant Hire signage" ratio="4/3" photo={photos.hinoFront} />
         </div>
         <h2 className="mt-16 mb-6 text-4xl">What we move.</h2>
         <div className="flex flex-wrap gap-2">
