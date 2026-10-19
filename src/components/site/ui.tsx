@@ -104,7 +104,7 @@ export function ImageSlot({ label, ratio = "4/3", className }: { label: string; 
 export function Logo({ className }: { className?: string }) {
   return (
     <span className={cn("inline-flex items-center rounded-xl bg-paper px-2 py-1", className)}>
-      <img src={logo.url} alt="KASBHA (Pty) Ltd" width={640} height={387} className="h-7 w-auto" decoding="async" />
+      <img src={logo.url} alt="KASBHA (Pty) Ltd" width={640} height={387} className="h-9 w-auto" decoding="async" />
     </span>
   );
 }
