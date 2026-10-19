@@ -86,8 +86,35 @@ export function PageHero({ eyebrow, title, children }: { eyebrow: string; title:
   );
 }
 
-/** Dark placeholder with a fixed aspect ratio, until real photos are supplied. */
-export function ImageSlot({ label, ratio = "4/3", className }: { label: string; ratio?: string; className?: string }) {
+/** Fixed-ratio photo slot; shows a dark placeholder when no photo is given. */
+export function ImageSlot({
+  label,
+  ratio = "4/3",
+  className,
+  photo,
+  eager,
+}: {
+  label: string;
+  ratio?: string;
+  className?: string;
+  photo?: { src: string; width: number; height: number };
+  eager?: boolean;
+}) {
+  if (photo) {
+    return (
+      <div style={{ aspectRatio: ratio }} className={cn("hairline relative overflow-hidden rounded-3xl bg-surface", className)}>
+        <img
+          src={photo.src}
+          alt={label}
+          width={photo.width}
+          height={photo.height}
+          loading={eager ? "eager" : "lazy"}
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
+      </div>
+    );
+  }
   return (
     <div
       role="img"
