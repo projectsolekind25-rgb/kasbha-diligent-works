@@ -1,3 +1,4 @@
+import { photos } from "@/config/photos";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { site, type ProjectCategory } from "@/config/site";
