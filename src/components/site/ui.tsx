@@ -28,7 +28,7 @@ export function ButtonLink({
   href: string;
   children: ReactNode;
   variant?: BtnVariant;
-  className?: string;
+  className?: string | undefined;
   external?: boolean;
 }) {
   return (

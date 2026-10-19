@@ -5,7 +5,7 @@ export function waLink(message: string) {
 }
 
 export function waFor(key: string) {
-  return waLink(site.whatsapp[key] ?? site.whatsapp["/"]);
+  return waLink(site.whatsapp[key] ?? site.whatsapp["/"] ?? "");
 }
 
 export function formatZAR(value: number) {
