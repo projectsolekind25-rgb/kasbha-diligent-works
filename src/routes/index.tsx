@@ -1,3 +1,4 @@
+import { photos } from "@/config/photos";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { site } from "@/config/site";
 import { pageHead, waFor } from "@/lib/site-utils";
@@ -38,7 +39,7 @@ function Home() {
             See our projects
           </Link>
         </div>
-        <ImageSlot label="Site work" ratio="16/10" className="mt-12" />
+        <ImageSlot label="KASBHA team renovating a building" ratio="16/10" className="mt-12" photo={photos.hero} eager />
       </Container>
 
       <Container className="mt-10">
@@ -83,7 +84,7 @@ function Home() {
               View plant hire
             </Link>
           </div>
-          <ImageSlot label="Hino 700" ratio="4/3" />
+          <ImageSlot label="KASBHA Hino 700 tipper truck" ratio="4/3" photo={photos.hinoSide} />
         </div>
       </Section>
 

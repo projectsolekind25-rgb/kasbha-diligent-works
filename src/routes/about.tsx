@@ -1,3 +1,4 @@
+import { photos } from "@/config/photos";
 import { createFileRoute } from "@tanstack/react-router";
 import { site } from "@/config/site";
 import { pageHead } from "@/lib/site-utils";
@@ -34,8 +35,8 @@ function About() {
           </Card>
         </div>
         <div className="mt-3 grid gap-3 md:grid-cols-2">
-          <ImageSlot label="Company bakkie" ratio="4/3" />
-          <ImageSlot label="Company bakkie" ratio="4/3" />
+          <ImageSlot label="KASBHA branded bakkies" ratio="4/3" photo={photos.bakkiesCampus} />
+          <ImageSlot label="KASBHA branded bakkie" ratio="4/3" photo={photos.bakkieStreet} />
         </div>
       </Section>
 
@@ -60,7 +61,7 @@ function About() {
             </li>
           ))}
         </ul>
-        <ImageSlot label="School building" ratio="16/9" className="mt-3" />
+        <ImageSlot label="School building completed by KASBHA" ratio="16/9" className="mt-3" photo={photos.school} />
       </Section>
 
       <Section className="pt-0">

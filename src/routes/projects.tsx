@@ -1,3 +1,4 @@
+import { photos } from "@/config/photos";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { site, type ProjectCategory } from "@/config/site";
@@ -51,8 +52,8 @@ function Projects() {
         </div>
 
         <div className="mt-16 grid grid-cols-2 gap-3 md:grid-cols-3">
-          {Array.from({ length: 6 }, (_, i) => (
-            <ImageSlot key={i} label={`Project ${i + 1}`} ratio="1/1" />
+          {photos.gallery.map(({ label, ...photo }) => (
+            <ImageSlot key={label} label={label} ratio="1/1" photo={photo} />
           ))}
         </div>
 
