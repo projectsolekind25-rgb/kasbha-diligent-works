@@ -19,7 +19,7 @@ const field = "hairline w-full rounded-2xl bg-surface px-4 py-3 text-[15px] outl
 function Contact() {
   const k = site.contact;
   const [name, setName] = useState("");
-  const [service, setService] = useState(contactServiceOptions[0]);
+  const [service, setService] = useState<string>(contactServiceOptions[0] ?? "Other");
   const [message, setMessage] = useState("");
 
   function submit(e: FormEvent) {

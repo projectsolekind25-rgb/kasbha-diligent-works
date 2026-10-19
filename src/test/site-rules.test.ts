@@ -8,7 +8,7 @@ describe("site rules", () => {
   });
   it("lists projects newest first", () => {
     const list = filterProjects(site.projects, "ALL");
-    expect(list[0].year).toBe(2026);
+    expect(list[0]!.year).toBe(2026);
     expect(list.at(-1)!.year).toBe(2021);
   });
   it("has 19 projects with 6 in General Building", () => {
