@@ -14,3 +14,4 @@
 - Backend is the user's external Supabase (never Lovable Cloud). Editable contact/brand data lives in site_settings; the root loader fetches it and applySettings() overlays it on src/config/site.ts defaults. Why: staff edits go live without redeploy, public components stay unchanged.
 - /admin is client-only (ssr:false), noindex, unlinked; it alone imports the Supabase browser client (start.ts attaches the bearer lazily, only on /admin). Why: zero weight on the public bundle.
 - Admin checks use has_role() + user_roles; privileged user ops run in server fns after that check. Admin-only data (CIDB expiry) lives in admin_settings. Why: never trust client checks.
+- Netlify deploys use netlify.toml (NITRO_PRESET=netlify, publish dist); vite.config stays untouched so Lovable builds keep their default target. Why: one codebase, two hosts.
