@@ -24,6 +24,17 @@ const csrfMiddleware = createCsrfMiddleware({
   filter: (ctx) => ctx.handlerType === "serverFn",
 });
 
+// Attach the signed-in admin's token to server function calls. The client is
+// imported lazily so the public site bundle never ships the auth library.
+const attachAuth = createMiddleware({ type: "function" }).client(async ({ next }) => {
+  if (typeof window === "undefined" || !window.location.pathname.startsWith("/admin")) return next();
+  const { supabase } = await import("@/integrations/supabase/client");
+  const { data } = await supabase.auth.getSession();
+  const token = data.session?.access_token;
+  return next(token ? { headers: { Authorization: `Bearer ${token}` } } : undefined);
+});
+
 export const startInstance = createStart(() => ({
   requestMiddleware: [errorMiddleware, csrfMiddleware],
+  functionMiddleware: [attachAuth],
 }));
