@@ -1,5 +1,6 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { site } from "@/config/site";
+import { liveExtras } from "@/lib/live-settings";
 import { Container, Logo, WhatsAppButton } from "./ui";
 
 export function Footer() {
@@ -36,11 +37,21 @@ export function Footer() {
                 {o.street}, {o.city}, {o.postalCode}
               </p>
             ))}
+            {liveExtras.socials.length > 0 && (
+              <p className="flex flex-wrap gap-x-4 gap-y-1 pt-2">
+                {liveExtras.socials.map((l) => (
+                  <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
+                    {l.label}
+                  </a>
+                ))}
+              </p>
+            )}
           </div>
         </div>
         <p className="mt-12 border-t pt-6 text-xs leading-relaxed text-muted-foreground">
           Reg {c.registration} · CIDB CRS {c.cidbCrs} ({c.cidbGrading}) · CSD {c.csd} · NHBRC {c.nhbrc}
         </p>
+        {liveExtras.footerText && <p className="mt-2 text-xs text-muted-foreground">{liveExtras.footerText}</p>}
         <p className="mt-2 text-xs text-muted-foreground">© {new Date().getFullYear()} {site.name}</p>
       </Container>
     </footer>

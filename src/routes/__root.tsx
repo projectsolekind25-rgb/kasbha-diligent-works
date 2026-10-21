@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  useLocation,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
@@ -17,6 +18,8 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { site } from "@/config/site";
 import { Header, WhatsAppPill } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { getPublicSettings } from "@/lib/settings.functions";
+import { applySettings } from "@/lib/live-settings";
 
 function NotFoundComponent() {
   return (
@@ -97,6 +100,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
   }),
+  loader: async () => ({ settings: await getPublicSettings() }),
+  staleTime: Infinity,
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -119,6 +124,16 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const { settings } = Route.useLoaderData();
+  applySettings(settings);
+  const { pathname } = useLocation();
+  if (pathname === "/admin" || pathname.startsWith("/admin/")) {
+    return (
+      <QueryClientProvider client={queryClient}>
+        <Outlet />
+      </QueryClientProvider>
+    );
+  }
   return (
     <QueryClientProvider client={queryClient}>
       <Header />
