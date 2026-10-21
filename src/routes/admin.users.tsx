@@ -38,7 +38,10 @@ function UsersPage() {
   const inv = useMutation({
     mutationFn: (e: string) => invite({ data: { email: e } }),
     onSuccess: (r) => {
-      if (!r.ok) return toast.error(r.message);
+      if (!r.ok) {
+        toast.error(r.message);
+        return;
+      }
       toast.success("Invite sent.");
       setEmail("");
       qc.invalidateQueries({ queryKey: KEY });
@@ -55,7 +58,10 @@ function UsersPage() {
       return { prev };
     },
     onSuccess: (r, _id, ctx) => {
-      if (r.ok) return toast.success("Admin removed.");
+      if (r.ok) {
+        toast.success("Admin removed.");
+        return;
+      }
       if (ctx?.prev) qc.setQueryData(KEY, ctx.prev);
       toast.error(r.message);
     },

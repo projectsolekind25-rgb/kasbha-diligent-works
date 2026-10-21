@@ -34,7 +34,7 @@ export function applySettings(s: PublicSettings | null | undefined) {
   if (!s) return;
   const m = site as unknown as {
     tagline: string;
-    contact: Record<string, unknown> & { offices: unknown[] };
+    contact: { offices: unknown[]; phoneDisplay: string; phoneTel: string; cellDisplay: string; cellTel: string; whatsappNumber: string; email: string };
   };
   m.tagline = s.tagline;
   m.contact.phoneDisplay = s.phone_display;
