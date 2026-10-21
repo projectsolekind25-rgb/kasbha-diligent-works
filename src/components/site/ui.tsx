@@ -120,18 +120,15 @@ export function ImageSlot({
       role="img"
       aria-label={`${label} (photo coming soon)`}
       style={{ aspectRatio: ratio }}
-      className={cn("hairline relative overflow-hidden rounded-3xl bg-surface", className)}
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,var(--color-accent),transparent_60%)] opacity-60" />
-      <span className="eyebrow absolute bottom-4 left-4">{label}</span>
-    </div>
+      className={cn("hairline overflow-hidden rounded-3xl bg-surface", className)}
+    />
   );
 }
 
 export function Logo({ className }: { className?: string }) {
   return (
     <span className={cn("inline-flex items-center rounded-xl bg-paper px-2 py-1", className)}>
-      <img src={logo.url} alt="KASBHA (Pty) Ltd" width={640} height={387} className="h-9 w-auto" decoding="async" />
+      <img src={logo} alt="KASBHA (Pty) Ltd" width={640} height={387} className="h-9 w-auto" decoding="async" />
     </span>
   );
 }
