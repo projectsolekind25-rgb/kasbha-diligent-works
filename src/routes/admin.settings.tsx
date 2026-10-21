@@ -18,7 +18,7 @@ const office = z.object({
   postalCode: z.string().trim().regex(/^\d{4}$/, "4 digits"),
   region: z.string().trim().min(1, "Required").max(60),
 });
-export const settingsSchema = z.object({
+const settingsSchema = z.object({
   phone_display: z.string().trim().min(6, "Required").max(30),
   phone_tel: z.string().trim().regex(/^\+\d{9,15}$/, "Format: +27312010081"),
   cell_display: z.string().trim().min(6, "Required").max(30),
