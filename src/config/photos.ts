@@ -1,18 +1,18 @@
-// Company photos taken from the KASBHA company profile. Swap pointers here to change a photo site-wide.
-import hero from "@/assets/hero-site-work.webp.asset.json";
-import hinoSide from "@/assets/hino-side.webp.asset.json";
-import hinoFront from "@/assets/hino-front.webp.asset.json";
-import bakkiesCampus from "@/assets/bakkies-campus.webp.asset.json";
-import bakkieStreet from "@/assets/bakkie-street.webp.asset.json";
-import school from "@/assets/school-building.webp.asset.json";
-import p1 from "@/assets/project-p1.webp.asset.json";
-import p2 from "@/assets/project-p2.webp.asset.json";
-import p3 from "@/assets/project-p3.webp.asset.json";
-import p4 from "@/assets/project-p4.webp.asset.json";
-import p5 from "@/assets/project-p5.webp.asset.json";
-import p6 from "@/assets/project-p6.webp.asset.json";
+// Company photos taken from the KASBHA company profile. Swap files in src/assets to change a photo site-wide.
+import hero from "@/assets/hero-site-work.webp";
+import hinoSide from "@/assets/hino-side.webp";
+import hinoFront from "@/assets/hino-front.webp";
+import bakkiesCampus from "@/assets/bakkies-campus.webp";
+import bakkieStreet from "@/assets/bakkie-street.webp";
+import school from "@/assets/school-building.webp";
+import p1 from "@/assets/project-p1.webp";
+import p2 from "@/assets/project-p2.webp";
+import p3 from "@/assets/project-p3.webp";
+import p4 from "@/assets/project-p4.webp";
+import p5 from "@/assets/project-p5.webp";
+import p6 from "@/assets/project-p6.webp";
 
-const ph = (a: { url: string }, width: number, height: number) => ({ src: a.url, width, height });
+const ph = (src: string, width: number, height: number) => ({ src, width, height });
 
 export const photos = {
   hero: ph(hero, 1200, 750),

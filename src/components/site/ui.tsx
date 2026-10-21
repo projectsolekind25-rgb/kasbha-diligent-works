@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { waFor } from "@/lib/site-utils";
-import logo from "@/assets/kasbha-logo.webp.asset.json";
+import logo from "@/assets/kasbha-logo.webp";
 
 export function WhatsAppIcon({ className }: { className?: string }) {
   return (
