@@ -37,6 +37,7 @@ function About() {
         <div className="mt-3 grid gap-3 md:grid-cols-2">
           <ImageSlot label="KASBHA branded bakkies" ratio="4/3" photo={photos.bakkiesCampus} />
           <ImageSlot label="KASBHA branded bakkie" ratio="4/3" photo={photos.bakkieStreet} />
+          <ImageSlot label="KASBHA bakkies with trailers on the road" ratio="16/9" className="md:col-span-2" photo={photos.bakkiesTrailers} />
         </div>
       </Section>
 

@@ -12,6 +12,15 @@ import p4 from "@/assets/project-p4.webp";
 import p5 from "@/assets/project-p5.webp";
 import p6 from "@/assets/project-p6.webp";
 
+import trenchCrew from "@/assets/trench-crew.webp";
+import mercedesTipper from "@/assets/mercedes-tipper.webp";
+import mutFitout from "@/assets/mut-fitout.webp";
+import completedBuilding from "@/assets/completed-building.webp";
+import perimeterFencing from "@/assets/perimeter-fencing.webp";
+import meshDelivery from "@/assets/mesh-delivery.webp";
+import bakkiesTrailers from "@/assets/bakkies-trailers.webp";
+import bakkieSide from "@/assets/bakkie-side.webp";
+
 const ph = (src: string, width: number, height: number) => ({ src, width, height });
 
 export const photos = {
@@ -21,7 +30,15 @@ export const photos = {
   bakkiesCampus: ph(bakkiesCampus, 640, 480),
   bakkieStreet: ph(bakkieStreet, 668, 501),
   school: ph(school, 596, 335),
+  trenchCrew: ph(trenchCrew, 800, 450),
+  mercedesTipper: ph(mercedesTipper, 800, 450),
+  bakkiesTrailers: ph(bakkiesTrailers, 800, 450),
+  bakkieSide: ph(bakkieSide, 800, 450),
   gallery: [
+    { label: "University interior fit-out", ...ph(mutFitout, 800, 600) },
+    { label: "Completed building works", ...ph(completedBuilding, 800, 600) },
+    { label: "Perimeter fencing installation", ...ph(perimeterFencing, 800, 450) },
+    { label: "Steel mesh supply and delivery", ...ph(meshDelivery, 800, 450) },
     { label: "Trench excavation for services", ...ph(p1, 480, 480) },
     { label: "Drainage works along a retaining wall", ...ph(p2, 640, 640) },
     { label: "Interior renovation in progress", ...ph(p3, 640, 640) },

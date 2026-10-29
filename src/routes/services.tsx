@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { site } from "@/config/site";
 import { pageHead } from "@/lib/site-utils";
-import { Card, PageHero, Section, WhatsAppButton } from "@/components/site/ui";
+import { photos } from "@/config/photos";
+import { Card, ImageSlot, PageHero, Section, WhatsAppButton } from "@/components/site/ui";
 
 export const Route = createFileRoute("/services")({
   head: () =>
@@ -26,6 +27,7 @@ function Services() {
               <div>
                 <span className="font-display text-sm font-bold text-primary">0{i + 1}</span>
                 <h2 className="mt-3 text-3xl sm:text-4xl">{s.full}</h2>
+                {i === 0 && <ImageSlot label="KASBHA crew excavating a trench" ratio="16/9" className="mt-6" photo={photos.trenchCrew} eager />}
               </div>
               <ul className="divide-y divide-border text-sm">
                 {s.items.map((it) => (

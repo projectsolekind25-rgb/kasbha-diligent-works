@@ -26,6 +26,7 @@ function PlantHire() {
         <div className="grid gap-3 md:grid-cols-2">
           <ImageSlot label="Hino 700 tipper truck, side view" ratio="4/3" photo={photos.hinoSide} eager />
           <ImageSlot label="Hino 700 front, Sand, Stone and Plant Hire signage" ratio="4/3" photo={photos.hinoFront} />
+          <ImageSlot label="KASBHA Mercedes-Benz tipper truck" ratio="16/9" className="md:col-span-2" photo={photos.mercedesTipper} />
         </div>
         <h2 className="mt-16 mb-6 text-4xl">What we move.</h2>
         <div className="flex flex-wrap gap-2">
