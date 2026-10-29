@@ -2,7 +2,7 @@ import { site, type Project } from "@/config/site";
 import { formatZAR } from "@/lib/site-utils";
 import { Card, ImageSlot, WhatsAppButton } from "./ui";
 
-export function ProjectCard({ p, photo }: { p: Project; photo?: { src: string; width: number; height: number; label: string } }) {
+export function ProjectCard({ p, photo }: { p: Project; photo?: { src: string; width: number; height: number; label: string } | undefined }) {
   return (
     <Card className="flex flex-col">
       {photo && <ImageSlot label={photo.label} ratio="16/9" className="mb-6" photo={photo} />}
