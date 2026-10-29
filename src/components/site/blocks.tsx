@@ -1,10 +1,11 @@
 import { site, type Project } from "@/config/site";
 import { formatZAR } from "@/lib/site-utils";
-import { Card, WhatsAppButton } from "./ui";
+import { Card, ImageSlot, WhatsAppButton } from "./ui";
 
-export function ProjectCard({ p }: { p: Project }) {
+export function ProjectCard({ p, photo }: { p: Project; photo?: { src: string; width: number; height: number; label: string } | undefined }) {
   return (
     <Card className="flex flex-col">
+      {photo && <ImageSlot label={photo.label} ratio="16/9" className="mb-6" photo={photo} />}
       <div className="flex items-center justify-between">
         <span className="eyebrow">{p.category === "SUPPLY" ? "Supply" : p.category}</span>
         <span className="text-xs tabular-nums text-muted-foreground">{p.year}</span>

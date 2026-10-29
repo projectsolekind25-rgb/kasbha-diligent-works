@@ -47,7 +47,7 @@ function Projects() {
         </p>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((p) => (
-            <ProjectCard key={p.client + p.work + p.year} p={p} />
+            <ProjectCard key={p.client + p.work + p.year} p={p} photo={photos.projectCards[`${p.client}|${p.work}`]} />
           ))}
         </div>
 
