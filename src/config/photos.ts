@@ -34,8 +34,14 @@ export const photos = {
   mercedesTipper: ph(mercedesTipper, 800, 450),
   bakkiesTrailers: ph(bakkiesTrailers, 800, 450),
   bakkieSide: ph(bakkieSide, 800, 450),
+  /** Photos shown on a specific project card, keyed by client + work. */
+  projectCards: {
+    "Mangosuthu University of Technology|Construction of Radio Room": {
+      label: "MUT Radio room built by KASBHA",
+      ...ph(mutFitout, 800, 600),
+    },
+  } as Record<string, { label: string; src: string; width: number; height: number }>,
   gallery: [
-    { label: "University interior fit-out", ...ph(mutFitout, 800, 600) },
     { label: "Completed building works", ...ph(completedBuilding, 800, 600) },
     { label: "Perimeter fencing installation", ...ph(perimeterFencing, 800, 450) },
     { label: "Steel mesh supply and delivery", ...ph(meshDelivery, 800, 450) },
