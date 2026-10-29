@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { contactServiceOptions, site } from "@/config/site";
 import { buildContactMessage, pageHead, waLink } from "@/lib/site-utils";
-import { Card, PageHero, Section, WhatsAppButton, WhatsAppIcon } from "@/components/site/ui";
+import { photos } from "@/config/photos";
+import { Card, ImageSlot, PageHero, Section, WhatsAppButton, WhatsAppIcon } from "@/components/site/ui";
 
 export const Route = createFileRoute("/contact")({
   head: () =>
@@ -93,6 +94,7 @@ function Contact() {
             </form>
           </Card>
         </div>
+        <ImageSlot label="KASBHA branded bakkie" ratio="16/9" className="mt-3" photo={photos.bakkieSide} />
       </Section>
     </>
   );
